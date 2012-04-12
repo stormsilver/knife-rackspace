@@ -145,7 +145,10 @@ class Chef
           :name => config[:server_name],
           :image_id => Chef::Config[:knife][:image],
           :flavor_id => locate_config_value(:flavor),
-          :metadata => Chef::Config[:knife][:rackspace_metadata]
+          :metadata => Chef::Config[:knife][:rackspace_metadata],
+          :personality => [
+            {'path' => '/etc/cloud', 'contents' => 'rackspace'}
+          ]
         )
 
         puts "#{ui.color("Instance ID", :cyan)}: #{server.id}"
