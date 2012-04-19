@@ -147,7 +147,7 @@ class Chef
           :flavor_id => locate_config_value(:flavor),
           :metadata => Chef::Config[:knife][:rackspace_metadata],
           :personality => [
-            {'path' => '/etc/cloud', 'contents' => 'rackspace'}
+            {'path' => '/etc/chef/ohai/hints/rackspace.json', 'contents' => ''}
           ]
         )
 
